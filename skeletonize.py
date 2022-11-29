@@ -14,16 +14,14 @@ def skeletonizer(imagepath):
     imginvert = invert(binaryimg)
     return skeletonize(imginvert)
 
-
-
-def affichage(windowname, image):
-    """Affiche d'une image
+def affichage(windowname, img):
+    """Affichage d'une image
     Args:
         windowname (str): nom de la fenetre d'affichage
-        image (var): nom de la variable ou est stocker l'image à afficher
+        img (var): nom de la variable ou est stocker l'image à afficher
     """
     cv2.namedWindow(windowname, cv2.WINDOW_NORMAL)
-    cv2.imshow('Skeletonize',image)
+    cv2.imshow('Skeletonize',img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 

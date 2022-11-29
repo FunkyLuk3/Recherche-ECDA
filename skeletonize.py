@@ -10,9 +10,10 @@ def skeletonizer(imagepath):
         imagename (str): chemin de l'image à squeletiser
     """
     img = cv2.imread(imagepath)
-    ret, binaryimg = cv2.threshold(img, 228, 255, cv2.THRESH_BINARY)
-    imginvert = invert(binaryimg)
-    return skeletonize(imginvert)
+    imginvert = invert(img)
+    ret, binaryimg = cv2.threshold(imginvert, 228, 255, cv2.THRESH_BINARY)
+    
+    return skeletonize(binaryimg)
 
 def affichage(windowname, img):
     """Affichage d'une image

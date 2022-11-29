@@ -5,6 +5,14 @@ from math import inf
 import numpy as np
 
 def imgtoarray(imagename):
+    """Transforme une image en tableau
+
+    Args:
+        imagename (var): nom de la variable ou est stocker l'image à afficher
+
+    Returns:
+        array: tableau contenant les pixels de l'image
+    """
     data = []
     nbrligne = 0
     numpydata = np.array(imagename)
@@ -16,6 +24,16 @@ def imgtoarray(imagename):
     return data
 
 def voisin(tabimage, x, y):
+    """Detecte les voisins d'un pixel
+
+    Args:
+        tabimage (array): tableau contenant les pixels de l'image
+        x (int): coordonnee du pixel
+        y (int): coordonnee du pixel
+
+    Returns:
+        array: liste des voisins du pixel
+    """
     v1 = (tabimage[x-1][y-1], x-1, y-1)
     v2 = (tabimage[x][y-1] , x, y-1)
     v3 = (tabimage[x+1][y-1], x+1, y-1)
@@ -27,6 +45,14 @@ def voisin(tabimage, x, y):
     return [v1,v2,v3,v4,v5,v6,v7]
 
 def extremite(tabimage):
+    """Renvoi la premiere extremite du l'image
+
+    Args:
+        tabimage (array): tableau contenant les pixels de l'image
+
+    Returns:
+        tuple: les coordonnees de la premiere extremite
+    """
     width = len(tabimage)
     height = len(tabimage[0])
 
@@ -43,6 +69,14 @@ def extremite(tabimage):
                     return (ligne, pixel)
                     
 def freeman(tabimage):
+    """Encodage de freeman
+
+    Args:
+        tabimage (array): tableau contenant les pixels de l'image
+
+    Returns:
+        str: encodage de l'image
+    """
     width = len(tabimage)
     height = len(tabimage[0])
     start = extremite(tabimage)

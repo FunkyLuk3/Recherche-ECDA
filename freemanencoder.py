@@ -78,21 +78,27 @@ def freeman(tabimage):
     Returns:
         str: encodage de l'image
     """
+
     width = len(tabimage)
     height = len(tabimage[0])
-    # start = extremite(tabimage)
-    # print(start)
-    visited = [[False for i in range(width)] for j in range(height)]
-    end = False
+
+    pixel = extremite(tabimage)
+    listvisited = [[False for i in range(width)] for j in range(height)]
     code = ""
+    end = False
+
     while not end:
-        voisins = voisin(tabimage, start[0], start[1])
-        for i,(valeur, vx, vy) in enumerate(voisins):
-            if valeur != 0 and not visited[vx][vy]:
-                visited[start[0]][start[1]] = True
-                start = (vx, vy)
+        listvisited[pixel[0]][pixel[1]] = True
+        voisins = voisin(tabimage, pixel[0], pixel[1])
+        for i,(valeur, vx, vy) in enumerate(voisins) :
+            if valeur != 0 and not listvisited[vx][vy] :
+                pixel = (vx, vy)
                 code += str(i)
                 break
-            if visited[vx][vy]:
+        if (listvisited[pixel[0]][pixel[1]]) :
                 end = True
+            
+        
     return code
+
+

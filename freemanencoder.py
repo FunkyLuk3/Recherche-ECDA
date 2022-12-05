@@ -34,15 +34,16 @@ def voisin(tabimage, x, y):
     Returns:
         array: liste des voisins du pixel
     """
-    v1 = (tabimage[x-1][y-1], x-1, y-1)
-    v2 = (tabimage[x][y-1] , x, y-1)
-    v3 = (tabimage[x+1][y-1], x+1, y-1)
-    v4 = (tabimage[x+1][y], x+1, y)
-    v5 = (tabimage[x+1][y+1], x+1, y+1)
-    v6 = (tabimage[x][y+1], x, y+1)
+    v0 = (tabimage[x-1][y-1], x-1, y-1)
+    v1 = (tabimage[x][y-1] , x, y-1)
+    v2 = (tabimage[x+1][y-1], x+1, y-1)
+    v3 = (tabimage[x+1][y], x+1, y)
+    v4 = (tabimage[x+1][y+1], x+1, y+1)
+    v5 = (tabimage[x][y+1], x, y+1)
+    v6 = (tabimage[x-1][y+1], x-1, y+1)
     v7 = (tabimage[x-1][y], x-1, y)
     
-    return [v1,v2,v3,v4,v5,v6,v7]
+    return [v0,v1,v2,v3,v4,v5,v6,v7]
 
 def extremite(tabimage):
     """Renvoi la premiere extremite du l'image
@@ -79,8 +80,8 @@ def freeman(tabimage):
     """
     width = len(tabimage)
     height = len(tabimage[0])
-    start = extremite(tabimage)
-    print(start)
+    # start = extremite(tabimage)
+    # print(start)
     visited = [[False for i in range(width)] for j in range(height)]
     end = False
     code = ""

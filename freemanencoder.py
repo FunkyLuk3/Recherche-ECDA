@@ -198,7 +198,7 @@ def freeman(image_path):
 
 def freeman_loop():
     
-    base_path = "C:/Users/Adam/Documents/01 - Lyon 2/Recherche/ressources/Datasets/dataset_caracters"
+    base_path = "bdd/dataset_caracters"
     scans_folders = ["03_PS600_police12", "04_2PS600_police12"]
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     

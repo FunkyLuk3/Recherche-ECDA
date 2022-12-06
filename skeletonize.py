@@ -2,12 +2,17 @@ from skimage.morphology import skeletonize
 from skimage.util import invert
 
 import cv2
+import numpy as np
 import matplotlib.pyplot as plt
 import string
 
 def preprocess(image):
     # niveaux de gris
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # filtre moyenneur et autres preprocessing à mettre ici
+    
+    
     
     # thresholding
     ret, image = cv2.threshold(image, 150, 255, cv2.THRESH_BINARY)

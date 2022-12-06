@@ -1,11 +1,15 @@
-from skeletonize import affichage, skeletonizer
-from freemanencoder import *
+from skeletonize import plotDistancesStats
+from freemanencoder import freeman_loop, freemanEditDistances
+
 
 def main():
-    skel = skeletonizer('bdd/04_2PS600_police12/00_resize/b/003.png')
-
-    data = imgtoarray(skel)
-    affichage('Skeletonize', skel)
-    print(freeman(data))
+    r = freeman_loop()
+    
+    d = freemanEditDistances(r)
+    
+    plotDistancesStats(d)
+    
+    print('test')
+    
 
 main()

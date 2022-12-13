@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_TimesNewRoman_11_5b-f_3.tif" type="PaySlip" font="TimesNewRoman" font_size="11" noise="true">
+  <fraud value="3" x="1971" y="3076" width="17" height="31"/>
+  <fraud value="3" x="2006" y="3076" width="17" height="31"/>
+  <fraud value="9" x="2029" y="3076" width="19" height="31"/>
+  <fraud value="3" x="2052" y="3076" width="17" height="31"/>
+  <fraud value="," x="2075" y="3102" width="7" height="10"/>
+  <fraud value="6" x="2086" y="3076" width="19" height="31"/>
+  <fraud value="6" x="2109" y="3076" width="19" height="31"/>
+  <fraud value="€" x="2141" y="3076" width="22" height="31"/>
+  <fraud value="3" x="1972" y="3155" width="17" height="31"/>
+  <fraud value="4" x="2006" y="3154" width="21" height="32"/>
+  <fraud value="5" x="2031" y="3155" width="17" height="31"/>
+  <fraud value="3" x="2053" y="3155" width="17" height="31"/>
+  <fraud value="," x="2076" y="3181" width="7" height="10"/>
+  <fraud value="6" x="2087" y="3155" width="19" height="31"/>
+  <fraud value="6" x="2110" y="3155" width="19" height="31"/>
+  <fraud value="€" x="2142" y="3155" width="22" height="31"/>
+</document>

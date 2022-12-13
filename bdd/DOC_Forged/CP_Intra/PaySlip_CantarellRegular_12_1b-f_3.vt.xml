@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CantarellRegular_12_1b-f_3.tif" type="PaySlip" font="CantarellRegular" font_size="12" noise="true">
+  <fraud value="S" x="708" y="514" width="23" height="35"/>
+  <fraud value="S" x="741" y="514" width="23" height="35"/>
+  <fraud value="3" x="1474" y="1223" width="22" height="36"/>
+  <fraud value="7" x="1504" y="1223" width="25" height="35"/>
+  <fraud value="2" x="1537" y="1223" width="23" height="35"/>
+  <fraud value="7" x="1566" y="1223" width="26" height="35"/>
+  <fraud value="0" x="1598" y="1223" width="26" height="36"/>
+  <fraud value="3" x="1470" y="1363" width="22" height="36"/>
+  <fraud value="7" x="1500" y="1363" width="25" height="35"/>
+  <fraud value="2" x="1533" y="1363" width="23" height="35"/>
+  <fraud value="7" x="1562" y="1363" width="26" height="35"/>
+  <fraud value="0" x="1594" y="1363" width="26" height="36"/>
+  <fraud value="`" x="1629" y="1395" width="1" height="4"/>
+  <fraud value="3" x="1914" y="3072" width="22" height="36"/>
+  <fraud value="7" x="1944" y="3072" width="25" height="35"/>
+  <fraud value="2" x="1977" y="3072" width="23" height="35"/>
+  <fraud value="7" x="2006" y="3072" width="26" height="35"/>
+  <fraud value="0" x="2038" y="3072" width="26" height="36"/>
+  <fraud value="3" x="1910" y="3156" width="22" height="36"/>
+  <fraud value="7" x="1940" y="3156" width="25" height="35"/>
+  <fraud value="2" x="1973" y="3156" width="23" height="35"/>
+  <fraud value="7" x="2002" y="3156" width="26" height="35"/>
+  <fraud value="0" x="2034" y="3156" width="26" height="36"/>
+  <fraud value="." x="2069" y="3190" width="2" height="4"/>
+</document>

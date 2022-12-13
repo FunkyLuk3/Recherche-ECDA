@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_Calibri_10_1b-f_7.tif" type="PaySlip" font="Calibri" font_size="10" noise="true">
+  <fraud value="E" x="1786" y="350" width="16" height="26"/>
+  <fraud value="L" x="1808" y="349" width="17" height="27"/>
+  <fraud value="L" x="1829" y="349" width="14" height="27"/>
+  <fraud value="E" x="1847" y="350" width="16" height="26"/>
+  <fraud value="e" x="1865" y="830" width="17" height="20"/>
+  <fraud value="a" x="1628" y="1545" width="15" height="20"/>
+  <fraud value="u" x="1648" y="1546" width="16" height="19"/>
+  <fraud value="x" x="1668" y="1546" width="16" height="19"/>
+  <fraud value="2" x="534" y="3153" width="16" height="28"/>
+</document>

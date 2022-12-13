@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CantarellRegular_13_1b-f_1.tif" type="PaySlip" font="CantarellRegular" font_size="13" noise="true">
+  <fraud value="F" x="1415" y="803" width="22" height="38"/>
+  <fraud value="R" x="1492" y="803" width="27" height="38"/>
+  <fraud value="S" x="1640" y="802" width="26" height="38"/>
+  <fraud value="i" x="1674" y="802" width="5" height="38"/>
+  <fraud value="m" x="1688" y="813" width="37" height="27"/>
+  <fraud value="o" x="1733" y="813" width="25" height="27"/>
+  <fraud value="n" x="1766" y="813" width="22" height="27"/>
+  <fraud value="à" x="116" y="3212" width="21" height="40"/>
+  <fraud value="F" x="292" y="3216" width="22" height="38"/>
+  <fraud value="U" x="329" y="3216" width="28" height="38"/>
+  <fraud value="R" x="369" y="3216" width="27" height="38"/>
+  <fraud value="R" x="404" y="3216" width="26" height="38"/>
+  <fraud value="I" x="443" y="3216" width="5" height="38"/>
+  <fraud value="N" x="461" y="3216" width="31" height="38"/>
+  <fraud value="S" x="517" y="3215" width="26" height="38"/>
+  <fraud value="i" x="551" y="3215" width="5" height="38"/>
+  <fraud value="m" x="565" y="3226" width="37" height="27"/>
+  <fraud value="o" x="610" y="3226" width="25" height="27"/>
+  <fraud value="n" x="643" y="3226" width="22" height="27"/>
+</document>

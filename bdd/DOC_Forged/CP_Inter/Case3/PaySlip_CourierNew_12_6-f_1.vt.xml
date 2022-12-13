@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CourierNew_12_6-f_1.tif" type="PaySlip" font="CourierNew" font_size="12" noise="false">
+  <fraud value="3" x="1555" y="1208" width="19" height="35"/>
+  <fraud value="3" x="1592" y="1208" width="19" height="35"/>
+  <fraud value="8" x="1618" y="1208" width="19" height="35"/>
+  <fraud value="6" x="1642" y="1208" width="21" height="35"/>
+  <fraud value="," x="1668" y="1237" width="7" height="13"/>
+  <fraud value="7" x="1680" y="1209" width="21" height="34"/>
+  <fraud value="9" x="1705" y="1208" width="21" height="35"/>
+  <fraud value="6" x="1740" y="1208" width="24" height="35"/>
+  <fraud value="3" x="1553" y="1348" width="19" height="35"/>
+  <fraud value="3" x="1590" y="1348" width="19" height="35"/>
+  <fraud value="8" x="1616" y="1348" width="19" height="35"/>
+  <fraud value="6" x="1640" y="1348" width="21" height="35"/>
+  <fraud value="," x="1666" y="1377" width="7" height="13"/>
+  <fraud value="7" x="1678" y="1349" width="21" height="34"/>
+  <fraud value="9" x="1703" y="1348" width="21" height="35"/>
+  <fraud value="6" x="1738" y="1348" width="24" height="35"/>
+  <fraud value="2" x="2024" y="3070" width="22" height="34"/>
+  <fraud value="7" x="2062" y="3071" width="21" height="34"/>
+  <fraud value="3" x="2087" y="3070" width="19" height="35"/>
+  <fraud value="1" x="2116" y="3070" width="13" height="34"/>
+  <fraud value="," x="2138" y="3099" width="7" height="13"/>
+  <fraud value="9" x="2150" y="3070" width="21" height="35"/>
+  <fraud value="5" x="2175" y="3071" width="19" height="34"/>
+  <fraud value="6" x="2210" y="3070" width="24" height="35"/>
+  <fraud value="2" x="2025" y="3146" width="22" height="34"/>
+  <fraud value="8" x="2064" y="3146" width="19" height="35"/>
+  <fraud value="1" x="2092" y="3146" width="13" height="34"/>
+  <fraud value="0" x="2113" y="3146" width="21" height="35"/>
+  <fraud value="," x="2139" y="3175" width="7" height="13"/>
+  <fraud value="7" x="2151" y="3147" width="21" height="34"/>
+  <fraud value="9" x="2176" y="3146" width="21" height="35"/>
+  <fraud value="6" x="2211" y="3146" width="24" height="35"/>
+</document>

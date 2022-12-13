@@ -54,20 +54,23 @@ def affichage(image, windowname):
     cv2.imshow("", image)
     cv2.destroyAllWindows()
 
-def plotDistancesStats(distances):
+def  plotDistancesStats(distances, ax):
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
     moyennes = []
     
     for char in letters:
         m = 0
-        for d in distances[char]:
+        long_moy = 0;
+        for d, l in distances[char]:
             m += d
-        m = float(m) / 10
-        moyennes.append(m)
+            long_moy += l
+            
+        m = float(m) / len(distances[char])
+        long_moy = float(long_moy) / len(distances[char])
+        moyennes.append(m/long_moy)
     
-    plt.bar(letters,moyennes)
-    plt.show()
+    ax.bar(letters, moyennes)
 
 # fonction qui calcule la différence entre deux string
 # honteusement copiée-collée

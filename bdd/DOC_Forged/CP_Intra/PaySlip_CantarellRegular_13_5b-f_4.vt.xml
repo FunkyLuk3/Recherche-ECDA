@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CantarellRegular_13_5b-f_4.tif" type="PaySlip" font="CantarellRegular" font_size="13" noise="true">
+  <fraud value="3" x="1471" y="1420" width="25" height="39"/>
+  <fraud value="3" x="1926" y="3142" width="25" height="39"/>
+  <fraud value="1" x="1931" y="3220" width="22" height="38"/>
+</document>

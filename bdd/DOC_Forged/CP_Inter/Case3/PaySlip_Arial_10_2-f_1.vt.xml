@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_Arial_10_2-f_1.tif" type="PaySlip" font="Arial" font_size="10" noise="false">
+  <fraud value="R" x="1413" y="336" width="17" height="27"/>
+  <fraud value="T" x="1431" y="336" width="20" height="27"/>
+  <fraud value="E" x="1456" y="336" width="14" height="27"/>
+  <fraud value="s" x="219" y="2840" width="13" height="20"/>
+  <fraud value="o" x="235" y="2840" width="18" height="20"/>
+  <fraud value="c" x="257" y="2840" width="14" height="20"/>
+  <fraud value="i" x="276" y="2833" width="4" height="27"/>
+  <fraud value="a" x="285" y="2840" width="15" height="20"/>
+  <fraud value="l" x="306" y="2831" width="4" height="29"/>
+  <fraud value="e" x="315" y="2840" width="17" height="20"/>
+  <fraud value="s" x="213" y="2907" width="13" height="20"/>
+  <fraud value="o" x="229" y="2907" width="18" height="20"/>
+  <fraud value="c" x="251" y="2907" width="14" height="20"/>
+  <fraud value="i" x="270" y="2900" width="4" height="27"/>
+  <fraud value="a" x="279" y="2907" width="15" height="20"/>
+  <fraud value="l" x="300" y="2898" width="4" height="29"/>
+  <fraud value="e" x="309" y="2907" width="17" height="20"/>
+  <fraud value="A" x="276" y="3077" width="22" height="27"/>
+  <fraud value="c" x="301" y="3084" width="14" height="20"/>
+  <fraud value="c" x="319" y="3084" width="14" height="20"/>
+  <fraud value="i" x="338" y="3077" width="4" height="27"/>
+  <fraud value="d" x="346" y="3076" width="17" height="28"/>
+  <fraud value="e" x="369" y="3084" width="17" height="20"/>
+  <fraud value="n" x="390" y="3084" width="16" height="20"/>
+  <fraud value="t" x="410" y="3079" width="12" height="25"/>
+  <fraud value="s" x="426" y="3084" width="13" height="20"/>
+</document>

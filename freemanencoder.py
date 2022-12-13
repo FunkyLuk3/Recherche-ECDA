@@ -196,46 +196,43 @@ def freeman(image_path):
     # freeman encoding
     return freeman_from_skel(skel)
 
-def freeman_loop():
+def freemanLoop(folder):
     
     base_path = "bdd/dataset_caracters"
-    scans_folders = ["03_PS600_police12", "04_2PS600_police12"]
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
-    results = []
+    results = {}
     
     # loop over all images
-    for f_i,folder in enumerate(scans_folders):
-        results.append({})
-        for char in letters:
-            print(f_i, " - ", char)
-            results[f_i][char] = []
+    for char in letters:
+        print(folder, "/", char)
+        results[char] = []
+        
+        for i in range(1,11):
+            file_name = ""
+            if i == 10:
+                file_name = "0" + str(i) + ".png"
+            else:
+                file_name = "00" + str(i) + ".png"
             
-            for i in range(1,11):
-                file_name = ""
-                if i == 10:
-                    file_name = "0" + str(i) + ".png"
-                else:
-                    file_name = "00" + str(i) + ".png"
-                
-                image_path = base_path + "/" +  folder + "/00_resize/" + char + "/" + file_name
-                
-                results[f_i][char].append(freeman(image_path))
+            image_path = base_path + "/" +  folder + "/00_resize/" + char + "/" + file_name
+            
+            results[char].append(freeman(image_path))
                 
     return results
 
-def freemanEditDistances(freeman_codes):
+def freemanEditDistances(freeman_codes1, freeman_codes2):
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
     distances = {}
     
     for char in letters:
         distances[char] = []
-        for i in range(10):
-            freeman_code_1S = freeman_codes[0][char][i]
-            freeman_code_2S = freeman_codes[1][char][i]
+        for i in range(len(freeman_codes1[char])):
+            freeman_code_1S = freeman_codes1[char][i]
+            freeman_code_2S = freeman_codes2[char][i]
             
             dist = editDistance(freeman_code_1S, freeman_code_2S, len(freeman_code_1S), len(freeman_code_2S))
-            distances[char].append(dist)
+            distances[char].append((dist, len(freeman_code_1S)))
     
     return distances

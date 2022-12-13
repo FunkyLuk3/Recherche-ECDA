@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CourierNew_11_1b-f_2.tif" type="PaySlip" font="CourierNew" font_size="11" noise="true">
+  <fraud value="D" x="1474" y="344" width="24" height="29"/>
+  <fraud value="E" x="1502" y="344" width="24" height="29"/>
+  <fraud value="L" x="1563" y="344" width="24" height="29"/>
+  <fraud value="'" x="1602" y="342" width="6" height="15"/>
+  <fraud value="I" x="1626" y="344" width="18" height="29"/>
+  <fraud value="N" x="1651" y="344" width="27" height="29"/>
+  <fraud value="D" x="1684" y="344" width="24" height="29"/>
+  <fraud value="U" x="1712" y="344" width="26" height="30"/>
+  <fraud value="S" x="1745" y="344" width="20" height="30"/>
+  <fraud value="T" x="1773" y="344" width="23" height="29"/>
+  <fraud value="R" x="1802" y="344" width="27" height="29"/>
+  <fraud value="I" x="1836" y="344" width="18" height="29"/>
+  <fraud value="E" x="1862" y="344" width="24" height="29"/>
+  <fraud value="5" x="1678" y="965" width="20" height="32"/>
+  <fraud value="4" x="1708" y="965" width="19" height="31"/>
+  <fraud value="2" x="1737" y="965" width="20" height="31"/>
+  <fraud value="1" x="1769" y="965" width="18" height="31"/>
+  <fraud value="0" x="1799" y="965" width="18" height="32"/>
+</document>

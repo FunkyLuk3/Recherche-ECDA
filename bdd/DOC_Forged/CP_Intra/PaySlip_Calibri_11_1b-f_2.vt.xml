@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_Calibri_11_1b-f_2.tif" type="PaySlip" font="Calibri" font_size="11" noise="true">
+  <fraud value="B" x="1548" y="511" width="19" height="29"/>
+  <fraud value="L" x="1573" y="511" width="15" height="29"/>
+  <fraud value="A" x="1589" y="511" width="25" height="29"/>
+  <fraud value="N" x="1619" y="511" width="23" height="30"/>
+  <fraud value="C" x="1647" y="511" width="21" height="30"/>
+</document>

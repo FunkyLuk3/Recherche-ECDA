@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_Calibri_12_6-f_1.tif" type="PaySlip" font="Calibri" font_size="12" noise="false">
+  <fraud value="V" x="1358" y="735" width="27" height="26"/>
+  <fraud value="I" x="1390" y="735" width="17" height="26"/>
+  <fraud value="L" x="1416" y="735" width="22" height="26"/>
+  <fraud value="L" x="1443" y="735" width="22" height="26"/>
+  <fraud value="A" x="1469" y="735" width="26" height="26"/>
+  <fraud value="I" x="1501" y="735" width="17" height="26"/>
+  <fraud value="N" x="1524" y="735" width="25" height="26"/>
+  <fraud value="E" x="1553" y="735" width="22" height="26"/>
+  <fraud value="S" x="1582" y="734" width="19" height="28"/>
+  <fraud value="V" x="1618" y="736" width="27" height="26"/>
+  <fraud value="i" x="1649" y="733" width="19" height="29"/>
+  <fraud value="r" x="1677" y="742" width="21" height="20"/>
+  <fraud value="g" x="1704" y="742" width="23" height="29"/>
+  <fraud value="i" x="1732" y="733" width="19" height="29"/>
+  <fraud value="n" x="1759" y="742" width="22" height="20"/>
+  <fraud value="i" x="1787" y="733" width="19" height="29"/>
+  <fraud value="e" x="1814" y="742" width="21" height="21"/>
+  <fraud value="/" x="1564" y="1029" width="19" height="43"/>
+  <fraud value="1" x="1584" y="1037" width="17" height="28"/>
+  <fraud value="8" x="1611" y="1036" width="17" height="30"/>
+</document>

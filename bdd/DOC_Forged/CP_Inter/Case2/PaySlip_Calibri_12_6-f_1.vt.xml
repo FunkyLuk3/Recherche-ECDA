@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_Calibri_12_6-f_1.tif" type="PaySlip" font="Calibri" font_size="12" noise="false">
+  <fraud value="`" x="1585" y="608" width="2" height="4"/>
+  <fraud value="3" x="1589" y="582" width="19" height="30"/>
+  <fraud value="0" x="1612" y="582" width="21" height="30"/>
+  <fraud value="9" x="1637" y="582" width="19" height="30"/>
+  <fraud value="0" x="1662" y="581" width="21" height="32"/>
+  <fraud value="H" x="1619" y="734" width="29" height="29"/>
+  <fraud value="e" x="1657" y="742" width="24" height="22"/>
+  <fraud value="l" x="1688" y="731" width="6" height="33"/>
+  <fraud value="e" x="1701" y="742" width="25" height="23"/>
+  <fraud value="n" x="1733" y="742" width="23" height="22"/>
+  <fraud value="e" x="1764" y="743" width="24" height="22"/>
+  <fraud value="2" x="1429" y="962" width="18" height="30"/>
+  <fraud value="7" x="1451" y="962" width="18" height="29"/>
+  <fraud value="6" x="1473" y="961" width="18" height="31"/>
+  <fraud value="0" x="1497" y="958" width="21" height="32"/>
+  <fraud value="E" x="655" y="1102" width="18" height="32"/>
+  <fraud value="m" x="678" y="1110" width="28" height="24"/>
+  <fraud value="p" x="713" y="1110" width="19" height="32"/>
+  <fraud value="l" x="737" y="1100" width="3" height="34"/>
+  <fraud value="o" x="745" y="1110" width="22" height="24"/>
+  <fraud value="i" x="771" y="1102" width="5" height="32"/>
+  <fraud value=":" x="792" y="1110" width="5" height="24"/>
+  <fraud value="T" x="1543" y="1103" width="21" height="32"/>
+  <fraud value="e" x="1566" y="1111" width="19" height="24"/>
+  <fraud value="c" x="1589" y="1111" width="15" height="24"/>
+  <fraud value="h" x="1608" y="1101" width="17" height="34"/>
+  <fraud value="n" x="1633" y="1111" width="17" height="24"/>
+  <fraud value="i" x="1656" y="1103" width="4" height="32"/>
+  <fraud value="c" x="1665" y="1111" width="18" height="25"/>
+  <fraud value="i" x="1686" y="1103" width="5" height="32"/>
+  <fraud value="e" x="1696" y="1111" width="17" height="25"/>
+  <fraud value="n" x="1718" y="1113" width="19" height="23"/>
+  <fraud value="s" x="1741" y="1113" width="14" height="23"/>
+</document>

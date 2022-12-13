@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CourierNew_13_5b-f_1.tif" type="PaySlip" font="CourierNew" font_size="13" noise="true">
+  <fraud value="6" x="1457" y="583" width="20" height="36"/>
+  <fraud value="4" x="1486" y="584" width="18" height="34"/>
+  <fraud value="V" x="1577" y="741" width="30" height="29"/>
+  <fraud value="i" x="1611" y="737" width="22" height="33"/>
+  <fraud value="r" x="1643" y="747" width="23" height="23"/>
+  <fraud value="3" x="1193" y="811" width="25" height="42"/>
+  <fraud value="7" x="1231" y="812" width="23" height="40"/>
+  <fraud value="R" x="1301" y="815" width="33" height="37"/>
+  <fraud value="u" x="1336" y="825" width="31" height="28"/>
+  <fraud value="e" x="1375" y="824" width="28" height="29"/>
+  <fraud value="E" x="1447" y="815" width="29" height="37"/>
+  <fraud value="l" x="1487" y="812" width="25" height="40"/>
+  <fraud value="z" x="1524" y="825" width="24" height="27"/>
+  <fraud value="e" x="1558" y="824" width="28" height="29"/>
+  <fraud value="a" x="1596" y="824" width="29" height="29"/>
+  <fraud value="r" x="1633" y="824" width="28" height="28"/>
+  <fraud value="d" x="1669" y="812" width="32" height="41"/>
+  <fraud value="P" x="1743" y="815" width="28" height="37"/>
+  <fraud value="r" x="1780" y="824" width="28" height="28"/>
+  <fraud value="e" x="1815" y="824" width="28" height="29"/>
+  <fraud value="v" x="1850" y="825" width="33" height="27"/>
+  <fraud value="o" x="1888" y="824" width="28" height="29"/>
+  <fraud value="s" x="1928" y="824" width="24" height="29"/>
+  <fraud value="t" x="1963" y="815" width="27" height="38"/>
+  <fraud value="V" x="1671" y="888" width="29" height="33"/>
+  <fraud value="I" x="1706" y="888" width="18" height="33"/>
+  <fraud value="L" x="1733" y="888" width="24" height="33"/>
+  <fraud value="L" x="1762" y="888" width="24" height="33"/>
+  <fraud value="A" x="1790" y="888" width="28" height="33"/>
+  <fraud value="I" x="1825" y="888" width="18" height="33"/>
+  <fraud value="N" x="1849" y="888" width="27" height="33"/>
+  <fraud value="E" x="1880" y="888" width="24" height="33"/>
+  <fraud value="S" x="1911" y="886" width="21" height="36"/>
+  <fraud value="1" x="1884" y="3071" width="19" height="35"/>
+  <fraud value="7" x="1945" y="3069" width="20" height="33"/>
+  <fraud value="1" x="1881" y="3150" width="21" height="34"/>
+  <fraud value="9" x="1951" y="3149" width="19" height="33"/>
+  <fraud value="2" x="1977" y="3148" width="19" height="34"/>
+</document>

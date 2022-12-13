@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CantarellRegular_13_1b-f_1.tif" type="PaySlip" font="CantarellRegular" font_size="13" noise="true">
+  <fraud value="A" x="1361" y="812" width="31" height="34"/>
+  <fraud value="L" x="1395" y="812" width="22" height="34"/>
+  <fraud value="F" x="1435" y="812" width="23" height="34"/>
+  <fraud value="o" x="1462" y="820" width="22" height="26"/>
+  <fraud value="n" x="1489" y="820" width="20" height="26"/>
+  <fraud value="s" x="1514" y="820" width="20" height="26"/>
+  <fraud value="s" x="1538" y="820" width="20" height="26"/>
+  <fraud value="e" x="1562" y="820" width="22" height="26"/>
+  <fraud value="D" x="1603" y="812" width="28" height="34"/>
+  <fraud value="a" x="1635" y="820" width="22" height="26"/>
+  <fraud value="n" x="1662" y="820" width="20" height="26"/>
+  <fraud value="s" x="1687" y="820" width="20" height="26"/>
+  <fraud value="L" x="1725" y="812" width="22" height="34"/>
+  <fraud value="e" x="1750" y="820" width="22" height="26"/>
+  <fraud value="m" x="1790" y="820" width="32" height="26"/>
+  <fraud value="u" x="1828" y="821" width="20" height="25"/>
+  <fraud value="r" x="1854" y="820" width="9" height="26"/>
+  <fraud value="1" x="1861" y="1031" width="16" height="37"/>
+  <fraud value="8" x="1887" y="1031" width="24" height="37"/>
+  <fraud value="5" x="1915" y="1031" width="25" height="37"/>
+  <fraud value="4" x="1942" y="1031" width="26" height="37"/>
+  <fraud value="6" x="1971" y="1031" width="24" height="37"/>
+  <fraud value="3" x="1999" y="1031" width="24" height="37"/>
+  <fraud value="1" x="2029" y="1031" width="16" height="37"/>
+  <fraud value="9" x="2055" y="1031" width="24" height="37"/>
+  <fraud value="7" x="2083" y="1031" width="24" height="37"/>
+  <fraud value="5" x="2111" y="1031" width="25" height="37"/>
+  <fraud value="4" x="2138" y="1031" width="26" height="37"/>
+  <fraud value="1" x="2169" y="1031" width="16" height="37"/>
+  <fraud value="8" x="2195" y="1031" width="24" height="37"/>
+  <fraud value="9" x="1803" y="2011" width="22" height="34"/>
+  <fraud value="4" x="1870" y="3143" width="23" height="34"/>
+  <fraud value="0" x="1897" y="3143" width="22" height="34"/>
+</document>

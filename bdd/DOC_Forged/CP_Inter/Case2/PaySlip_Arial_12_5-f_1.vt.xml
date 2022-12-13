@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_Arial_12_5-f_1.tif" type="PaySlip" font="Arial" font_size="12" noise="false">
+  <fraud value="1" x="1250" y="2148" width="18" height="31"/>
+  <fraud value="2" x="1278" y="2148" width="20" height="31"/>
+  <fraud value="," x="1311" y="2172" width="10" height="14"/>
+</document>

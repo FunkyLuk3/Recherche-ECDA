@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_TimesNewRoman_10_5b-f_6.tif" type="PaySlip" font="TimesNewRoman" font_size="10" noise="true">
+  <fraud value="e" x="1773" y="751" width="16" height="20"/>
+  <fraud value="2" x="1656" y="1039" width="17" height="29"/>
+  <fraud value="." x="1676" y="1056" width="2" height="4"/>
+  <fraud value="9" x="1959" y="3073" width="17" height="29"/>
+</document>

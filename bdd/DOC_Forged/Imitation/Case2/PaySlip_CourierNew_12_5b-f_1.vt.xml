@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CourierNew_12_5b-f_1.tif" type="PaySlip" font="CourierNew" font_size="12" noise="true">
+  <fraud value="b" x="1674" y="736" width="24" height="37"/>
+  <fraud value="e" x="1703" y="745" width="24" height="28"/>
+  <fraud value="r" x="1734" y="745" width="16" height="27"/>
+  <fraud value="t" x="1751" y="739" width="17" height="33"/>
+</document>

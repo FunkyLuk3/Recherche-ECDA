@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_CourierNew_11_2-f_1.tif" type="PaySlip" font="CourierNew" font_size="11" noise="false">
+  <fraud value="I" x="1025" y="1103" width="18" height="27"/>
+  <fraud value="n" x="1050" y="1110" width="22" height="20"/>
+  <fraud value="g" x="1078" y="1110" width="22" height="28"/>
+  <fraud value="e" x="1106" y="1100" width="21" height="30"/>
+  <fraud value="n" x="1133" y="1110" width="22" height="20"/>
+  <fraud value="i" x="1162" y="1101" width="19" height="29"/>
+  <fraud value="e" x="1188" y="1110" width="21" height="20"/>
+  <fraud value="u" x="1215" y="1110" width="22" height="20"/>
+  <fraud value="r" x="1244" y="1110" width="21" height="20"/>
+  <fraud value="s" x="1272" y="1109" width="18" height="21"/>
+  <fraud value="e" x="1325" y="1109" width="21" height="21"/>
+  <fraud value="t" x="1353" y="1104" width="21" height="26"/>
+  <fraud value="c" x="1408" y="1110" width="21" height="20"/>
+  <fraud value="a" x="1435" y="1110" width="21" height="20"/>
+  <fraud value="d" x="1462" y="1102" width="24" height="28"/>
+  <fraud value="r" x="1491" y="1110" width="21" height="20"/>
+  <fraud value="e" x="1517" y="1110" width="22" height="20"/>
+  <fraud value="s" x="1546" y="1110" width="19" height="21"/>
+  <fraud value="t" x="1600" y="1104" width="20" height="27"/>
+  <fraud value="e" x="1627" y="1110" width="21" height="20"/>
+  <fraud value="c" x="1656" y="1110" width="20" height="21"/>
+  <fraud value="h" x="1682" y="1102" width="23" height="29"/>
+  <fraud value="n" x="1710" y="1111" width="22" height="20"/>
+  <fraud value="i" x="1740" y="1102" width="19" height="29"/>
+  <fraud value="q" x="1767" y="1111" width="23" height="28"/>
+  <fraud value="u" x="1793" y="1111" width="23" height="21"/>
+  <fraud value="e" x="1822" y="1111" width="21" height="21"/>
+  <fraud value="s" x="1851" y="1111" width="18" height="21"/>
+  <fraud value="d" x="1905" y="1103" width="24" height="29"/>
+  <fraud value="'" x="1941" y="1103" width="6" height="14"/>
+  <fraud value="e" x="1961" y="1111" width="21" height="21"/>
+  <fraud value="n" x="1988" y="1112" width="22" height="20"/>
+  <fraud value="t" x="2017" y="1106" width="20" height="26"/>
+  <fraud value="r" x="2045" y="1112" width="20" height="20"/>
+  <fraud value="e" x="2071" y="1112" width="21" height="21"/>
+  <fraud value="p" x="2096" y="1112" width="24" height="29"/>
+  <fraud value="r" x="2126" y="1112" width="21" height="20"/>
+  <fraud value="i" x="2155" y="1103" width="19" height="30"/>
+  <fraud value="s" x="2182" y="1112" width="18" height="21"/>
+  <fraud value="e" x="2208" y="1112" width="21" height="21"/>
+</document>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document name="PaySlip_TimesNewRoman_11_5b-f_2.tif" type="PaySlip" font="TimesNewRoman" font_size="11" noise="true">
+  <fraud value="5" x="1380" y="815" width="17" height="31"/>
+  <fraud value="5" x="765" y="964" width="18" height="32"/>
+  <fraud value="6" x="956" y="1938" width="19" height="32"/>
+  <fraud value="6" x="952" y="2009" width="19" height="32"/>
+  <fraud value="6" x="953" y="2149" width="18" height="31"/>
+  <fraud value="6" x="951" y="2219" width="19" height="32"/>
+  <fraud value="6" x="952" y="2289" width="19" height="32"/>
+  <fraud value="6" x="952" y="2359" width="18" height="31"/>
+  <fraud value="0" x="951" y="2827" width="19" height="32"/>
+  <fraud value="0" x="948" y="2896" width="20" height="32"/>
+  <fraud value="7" x="1974" y="3074" width="19" height="31"/>
+  <fraud value="8" x="2088" y="3075" width="17" height="31"/>
+  <fraud value="7" x="1970" y="3153" width="19" height="31"/>
+  <fraud value="8" x="2088" y="3154" width="17" height="31"/>
+</document>

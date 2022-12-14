@@ -17,7 +17,7 @@ def main():
     dist_num_scan2 = freemanEditDistances(numeric_codes, scan2_codes)
     
     fig, axs = plt.subplots(2)
-    fig.suptitle('Distance par rapport aux caractères numériques')
+    fig.suptitle('Distance par rapport aux caractères numériques\n(avec filtre moyenneur)')
     
     axs[0].set(ylabel='1 scan')
     axs[1].set(ylabel='2 scans')

@@ -5,47 +5,6 @@ import cv2
 import numpy as np
 import string
 
-def imgtoarray(imagename):
-    """Transforme une image en tableau
-
-    Args:
-        imagename (var): nom de la variable ou est stocker l'image à afficher
-
-    Returns:
-        array: tableau contenant les pixels de l'image
-    """
-    data = []
-    nbrligne = 0
-    numpydata = np.array(imagename)
-    for ligne in numpydata:
-        data.append([])
-        for pixel in range(len(ligne)):
-            data[nbrligne].append(ligne[pixel][1])
-        nbrligne += 1
-    return data
-
-def voisin(tabimage, x, y):
-    """Detecte les voisins d'un pixel
-
-    Args:
-        tabimage (array): tableau contenant les pixels de l'image
-        x (int): coordonnee du pixel
-        y (int): coordonnee du pixel
-
-    Returns:
-        array: liste des voisins du pixel
-    """
-    v0 = (tabimage[x-1][y-1], x-1, y-1)
-    v1 = (tabimage[x][y-1] , x, y-1)
-    v2 = (tabimage[x+1][y-1], x+1, y-1)
-    v3 = (tabimage[x+1][y], x+1, y)
-    v4 = (tabimage[x+1][y+1], x+1, y+1)
-    v5 = (tabimage[x][y+1], x, y+1)
-    v6 = (tabimage[x-1][y+1], x-1, y+1)
-    v7 = (tabimage[x-1][y], x-1, y)
-    
-    return [v0,v1,v2,v3,v4,v5,v6,v7]
-
 def voisin2(image, x, y):
     """Detecte les voisins d'un pixel
 
@@ -78,33 +37,9 @@ def voisin2(image, x, y):
         y += dy_list[i]
     
     return voisins
-
-def extremite(tabimage):
-    """Renvoi la premiere extremite du l'image
-
-    Args:
-        tabimage (array): tableau contenant les pixels de l'image
-
-    Returns:
-        tuple: les coordonnees de la premiere extremite
-    """
-    width = len(tabimage)
-    height = len(tabimage[0])
-
-    
-    for ligne in range(height):
-        for pixel in range(width):
-            if tabimage[ligne][pixel] != 0:
-                listvoisin = voisin(tabimage, ligne, pixel)
-                nb_voisins = 0
-                for (valeur, vx, vy) in listvoisin:
-                    if valeur != 0:
-                        nb_voisins += 1
-                if nb_voisins == 1:
-                    return (ligne, pixel)
                 
                 
-def extremite2(image, visited):
+def extremite(image, visited):
     """Renvoi la premiere extremite du l'image. 
     Le deuxième argument permet de se limiter aux pixels nons visitéés de l'image, afin de faire des appels successifs à freeman2
 
@@ -158,7 +93,7 @@ def freeman_from_skel(skel):
     height, width = skel.shape
 
     visited = np.full((height, width), False)
-    x, y = extremite2(skel, visited)                    # les coordonnées du pixel extremité
+    x, y = extremite(skel, visited)                    # les coordonnées du pixel extremité
     
     end = False
     while not end:
@@ -173,7 +108,7 @@ def freeman_from_skel(skel):
                     break
             
             if i == 7:              # ici, on a pas trouvé de voisin pour continer le long du squelette
-                x, y = extremite2(skel, visited)
+                x, y = extremite(skel, visited)
         if x == None:
             end = True
             
@@ -184,7 +119,7 @@ def freeman(image_path):
     image = cv2.imread(image_path)
     
     # preprocessing
-    image = preprocess(image)
+    image = preprocess(image, False)
     
     # skeletonization
     skel = skeletonize(image)

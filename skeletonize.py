@@ -1,38 +1,41 @@
-from skimage.morphology import skeletonize
-from skimage.util import invert
-
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import string
 
-def preprocess(image):
+def preprocess(image, plot_image):
     # niveaux de gris
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
+    if(plot_image):
+        pltShowImage(image, "base")
+    
     # filtre moyenneur et autres preprocessing à mettre ici
+    kernel = np.ones((3,3),np.float32)/9
+    image = cv2.filter2D(image,-1,kernel)
     
-    
+    if(plot_image):
+        pltShowImage(image, "base -> average")
     
     # thresholding
-    ret, image = cv2.threshold(image, 150, 255, cv2.THRESH_BINARY)
+    ret, image = cv2.threshold(image, 190, 255, cv2.THRESH_BINARY)
+    
+    if(plot_image):
+        pltShowImage(image, "base -> average -> thresholding")
     
     # invert colors and have a 2D array of values between 0 and 1
     image = (255 - image)/255
     
-    return image
-
-def skeletonizer(imagepath):
-    """Squeletisation d'une image
-
-    Args:
-        imagename (str): chemin de l'image à squeletiser
-    """
-    img = cv2.imread(imagepath)
-    imginvert = invert(img)
-    ret, binaryimg = cv2.threshold(imginvert, 228, 255, cv2.THRESH_BINARY)
+    # closing
+    kernel = np.ones((3,3),np.float32)
     
-    return skeletonize(binaryimg)
+    image = cv2.dilate(image,kernel,iterations = 2)
+    image = cv2.erode(image,kernel,iterations = 2)
+    
+    if(plot_image):
+        pltShowImage(image, "base -> average-> thresholding -> closing")
+
+    return image
 
 # fonction pour afficher dans un plot (sur spyder)
 def pltShowImage(image, title):

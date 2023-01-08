@@ -171,3 +171,80 @@ def freemanEditDistances(freeman_codes1, freeman_codes2):
             distances[char].append((dist, len(freeman_code_1S)))
     
     return distances
+
+#formule dans le document 1608-1613
+def crossingNumber(skeleton, x, y):
+    height, width = skeleton.shape
+    
+    CN = 0
+    
+    if skeleton[x,y] == 0:
+        return CN
+    else:
+        #les huits voisins
+        voisins = voisin2(skeleton, x, y)
+        #on ajoute le premier à la fin de la liste
+        voisins.append(voisins[0])
+        
+        v = (0, 1)[voisins[0][0] == 255]
+        CN = 0
+        
+        for i in range(1,len(voisins)):
+            vp = 0
+            
+            if voisins[i] != None:
+                vp = (0, 1)[voisins[i][0] == 255]
+            
+            # v et vp valent 1 si ce sont des pixels du squelette, sinon 0
+            CN += abs(vp - v)/2
+            
+            v = vp
+        
+    return CN
+
+#renvoie les jonctions du squelette
+def junctions(skeleton):
+    height, width = skeleton.shape
+    
+    junction_list= []
+    
+    for x in range(height):
+        for y in range(width):
+            if skeleton[x,y] == 255:
+                CN = crossingNumber(skeleton, x, y)
+                
+                if CN != 2:
+                    junction_list.append((x,y,CN))
+    
+    return junction_list
+
+def removeLine(skeleton, start, end):
+    x,y = start
+    while (x,y) != end:
+        voisins = voisin2(skeleton, x, y)
+        
+        for val, vx, vy in voisins:
+            if val == 255:
+                skeleton[x,y] = 0
+                x,y = vx, vy
+                break
+
+def deleteSerifs(skeleton, radius_sq):
+    junct = junctions(skeleton)
+    
+    for i,j1 in enumerate(junct):
+        for k, j2 in enumerate(junct):
+            if i != k and ((j1[2] == 1.0) ^ (j2[2] == 1.0)):       # On ne compare que les jonctions dictinctes, et uniquement si une seule d'entre elle est une extrémité
+                dx = j1[0] - j2[0]
+                dy = j1[1] - j2[1]
+                dist_sq = dx*dx + dy+dy
+                
+                if dist_sq > radius_sq:
+                    start = j1[0], j1[1]
+                    end = j2[0], j2[1]
+                    
+                    # On les inverse si start n'est pas l'extrémité
+                    if j1[2] != 1.0:
+                        start, end  = end, start
+                    
+                    removeLine(skeleton, start, end)

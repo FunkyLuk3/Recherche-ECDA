@@ -221,16 +221,27 @@ def junctions(skeleton):
 def removeLine(skeleton, start, end):
     x,y = start
     while (x,y) != end:
-        voisins = voisin2(skeleton, x, y)
+        # on supprime le pixel
+        skeleton[x,y] = 0
         
-        for val, vx, vy in voisins:
-            if val == 255:
-                skeleton[x,y] = 0
-                x,y = vx, vy
-                break
+        # on regarde les voisins pour savoir dans quelle direction la suite du squelette est
+        voisins = voisin2(skeleton, x, y)
 
-def deleteSerifs(skeleton, radius_sq):
+        for v in voisins:
+            if v != None:
+                val, vx, vy = v
+                CN = crossingNumber(skeleton, vx, vy)
+                if val == 255 and (CN == 1.0 or (vx, vy) == end):    # si c'est un pixel du squelette, et que c'est soit une extrémité soit la jonction de fin
+                    x,y = vx, vy
+                    break
+
+def detectSerifs(skeleton, radius_sq):
     junct = junctions(skeleton)
+    
+    # set des serifs
+    # les sérifs sont caractérisés par un doublet (start, end), eux même des coordonnées
+    # start est l'extrémité, end la jonction la plus proche
+    serifs = set()
     
     for i,j1 in enumerate(junct):
         for k, j2 in enumerate(junct):
@@ -239,7 +250,7 @@ def deleteSerifs(skeleton, radius_sq):
                 dy = j1[1] - j2[1]
                 dist_sq = dx*dx + dy+dy
                 
-                if dist_sq > radius_sq:
+                if dist_sq < radius_sq:
                     start = j1[0], j1[1]
                     end = j2[0], j2[1]
                     
@@ -247,4 +258,10 @@ def deleteSerifs(skeleton, radius_sq):
                     if j1[2] != 1.0:
                         start, end  = end, start
                     
-                    removeLine(skeleton, start, end)
+                    serifs.add((start, end))
+    
+    return list(serifs)
+
+def deleteSerifs(skeleton, serifs):
+    for (start, end) in serifs:
+        removeLine(skeleton, start, end)

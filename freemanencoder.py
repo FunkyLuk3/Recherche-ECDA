@@ -1,46 +1,16 @@
 from skimage.morphology import skeletonize
 from skeletonize import preprocess, editDistance
+from serifs import deleteSerifs, voisin2
 
 import cv2
 import numpy as np
 import string
 
-def voisin2(image, x, y):
-    """Detecte les voisins d'un pixel
 
-    Args:
-        tabimage (array): tableau contenant les pixels de l'image
-        x (int): coordonnee du pixel
-        y (int): coordonnee du pixel
-
-    Returns:
-        array: liste des voisins du pixel
-    """
-    height, width = image.shape
-    
-    # les changements de coordonnées à chaque étape
-    dx_list = [0,    1,    1,    0,    0,   -1,   -1,    0]
-    dy_list = [1,    0,    0,   -1,   -1,    0,    0,    1]
-    
-    # la liste qui contient les voisins dans l'ordre
-    voisins = []
-    
-    # les coordonnées du premier voisins sont celles juste au dessus du pixel
-    x -= 1
-    
-    for i in range(len(dx_list)):
-        if x >= height or x < 0 or y >= width or y < 0:     # si les coordonnées du voisin sont hors de l'image, on met le voisin à "None"
-            voisins.append(None)
-        else:
-            voisins.append((image[x,y], x, y))
-        x += dx_list[i]
-        y += dy_list[i]
-    
-    return voisins
                 
                 
 def extremite(image, visited):
-    """Renvoi la premiere extremite du l'image. 
+    """Renvoie la premiere extremite du l'image. 
     Le deuxième argument permet de se limiter aux pixels nons visitéés de l'image, afin de faire des appels successifs à freeman2
 
     Args:
@@ -81,7 +51,7 @@ def extremite(image, visited):
     return (x_min, y_min)
 
 def freeman_from_skel(skel):
-    """Encodage de freeman
+    """Encodage de freeman squelettise
 
     Args:
         tabimage (array): tableau contenant les pixels de l'image
@@ -116,6 +86,14 @@ def freeman_from_skel(skel):
 
 
 def freeman(image_path):
+    """Encodage de freeman
+
+    Args:
+        image_path (str): le path (chemin) de l'image sur laquel on applique freeman
+
+    Returns:
+        str: encodage de l'image
+    """
     image = cv2.imread(image_path)
     
     # preprocessing
@@ -123,6 +101,8 @@ def freeman(image_path):
     
     # skeletonization
     skel = skeletonize(image)
+    
+    deleteSerifs(skel, 10)
     
     # Affichage du squelette
     #affichage(aff,  "Skeleton")             # afficher dans une fenetre à part
@@ -132,7 +112,14 @@ def freeman(image_path):
     return freeman_from_skel(skel)
 
 def freemanLoop(folder):
-    
+    """Encodage de freeman sur tous les elements d'un dossier
+
+    Args:
+        folder (str): nom du dossier
+
+    Returns:
+        char[]: liste des encodage de chaque image du dossier
+    """
     base_path = "bdd/dataset_caracters"
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
@@ -157,6 +144,16 @@ def freemanLoop(folder):
     return results
 
 def freemanEditDistances(freeman_codes1, freeman_codes2):
+    """Calcule la distance entre 2 dictionnaire de codes de Freeman
+       Les codes de freeman sont ceux de lettres de l'alphabet 
+
+    Args:
+        freeman_codes1 (char[]): Dictionnaire de code de freeman 
+        freeman_codes2 (char[]): Dictionnaire de code de freeman 
+
+    Returns:
+        int{}: Distance entre freeman_codes1 et freeman_codes2
+    """
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
     distances = {}
@@ -171,97 +168,3 @@ def freemanEditDistances(freeman_codes1, freeman_codes2):
             distances[char].append((dist, len(freeman_code_1S)))
     
     return distances
-
-#formule dans le document 1608-1613
-def crossingNumber(skeleton, x, y):
-    height, width = skeleton.shape
-    
-    CN = 0
-    
-    if skeleton[x,y] == 0:
-        return CN
-    else:
-        #les huits voisins
-        voisins = voisin2(skeleton, x, y)
-        #on ajoute le premier à la fin de la liste
-        voisins.append(voisins[0])
-        
-        v = (0, 1)[voisins[0][0] == 255]
-        CN = 0
-        
-        for i in range(1,len(voisins)):
-            vp = 0
-            
-            if voisins[i] != None:
-                vp = (0, 1)[voisins[i][0] == 255]
-            
-            # v et vp valent 1 si ce sont des pixels du squelette, sinon 0
-            CN += abs(vp - v)/2
-            
-            v = vp
-        
-    return CN
-
-#renvoie les jonctions du squelette
-def junctions(skeleton):
-    height, width = skeleton.shape
-    
-    junction_list= []
-    
-    for x in range(height):
-        for y in range(width):
-            if skeleton[x,y] == 255:
-                CN = crossingNumber(skeleton, x, y)
-                
-                if CN != 2:
-                    junction_list.append((x,y,CN))
-    
-    return junction_list
-
-def removeLine(skeleton, start, end):
-    x,y = start
-    while (x,y) != end:
-        # on supprime le pixel
-        skeleton[x,y] = 0
-        
-        # on regarde les voisins pour savoir dans quelle direction la suite du squelette est
-        voisins = voisin2(skeleton, x, y)
-
-        for v in voisins:
-            if v != None:
-                val, vx, vy = v
-                CN = crossingNumber(skeleton, vx, vy)
-                if val == 255 and (CN == 1.0 or (vx, vy) == end):    # si c'est un pixel du squelette, et que c'est soit une extrémité soit la jonction de fin
-                    x,y = vx, vy
-                    break
-
-def detectSerifs(skeleton, radius_sq):
-    junct = junctions(skeleton)
-    
-    # set des serifs
-    # les sérifs sont caractérisés par un doublet (start, end), eux même des coordonnées
-    # start est l'extrémité, end la jonction la plus proche
-    serifs = set()
-    
-    for i,j1 in enumerate(junct):
-        for k, j2 in enumerate(junct):
-            if i != k and ((j1[2] == 1.0) ^ (j2[2] == 1.0)):       # On ne compare que les jonctions dictinctes, et uniquement si une seule d'entre elle est une extrémité
-                dx = j1[0] - j2[0]
-                dy = j1[1] - j2[1]
-                dist_sq = dx*dx + dy+dy
-                
-                if dist_sq < radius_sq:
-                    start = j1[0], j1[1]
-                    end = j2[0], j2[1]
-                    
-                    # On les inverse si start n'est pas l'extrémité
-                    if j1[2] != 1.0:
-                        start, end  = end, start
-                    
-                    serifs.add((start, end))
-    
-    return list(serifs)
-
-def deleteSerifs(skeleton, serifs):
-    for (start, end) in serifs:
-        removeLine(skeleton, start, end)

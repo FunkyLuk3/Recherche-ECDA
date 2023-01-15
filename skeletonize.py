@@ -4,6 +4,15 @@ import matplotlib.pyplot as plt
 import string
 
 def preprocess(image, plot_image):
+    """Applique le pre-traitement sur une image
+
+    Args:
+        image (np.array): image a pre-traiter 
+        plot_image (boolean): affiche ou non les etapes du pre-traitement dans les pyplot
+
+    Returns:
+        np.array: image pre-traitee
+    """
     # niveaux de gris
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
@@ -39,6 +48,12 @@ def preprocess(image, plot_image):
 
 # fonction pour afficher dans un plot (sur spyder)
 def pltShowImage(image, title):
+    """Creer un pyplot et l'affiche 
+
+    Args:
+        image (np.array): image a afficher dans le pyplot
+        title (str): titre du pyplot
+    """
     plt.title(title + " - " + str(image.shape))
     if len(image.shape) <= 2 :
         plt.imshow(image, cmap="gray")
@@ -75,9 +90,19 @@ def  plotDistancesStats(distances, ax):
     
     ax.bar(letters, moyennes)
 
-# fonction qui calcule la différence entre deux string
-# honteusement copiée-collée
+# copiée-collée https://www.geeksforgeeks.org/edit-distance-dp-5
 def editDistance(str1, str2, m, n):
+    """Calcule la distance Levenshtein entre 2 chaine de caractére 
+
+    Args:
+        str1 (str): Premiere chaine de caractere
+        str2 (str): Deuxieme chaine de caractere
+        m (int): Taille de la premiere chaine de caractere
+        n (int): Taille de la deuxieme chaine de caractere
+
+    Returns:
+        int: Distance de Levenshtein entre les 2 chaines de caractere
+    """
     # Create a table to store results of subproblems
     dp = [[0 for x in range(n + 1)] for x in range(m + 1)]
  

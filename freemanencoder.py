@@ -5,6 +5,8 @@ from serifs import deleteSerifs, voisin2
 import cv2
 import numpy as np
 import string
+import sys
+
 
 
                 
@@ -99,9 +101,13 @@ def freeman(image_path, avg_filter, closing_amount, remove_serifs):
     """
     
     image = cv2.imread(image_path)
-    if image.size == 0:
+    try:
+        if image.size == 0:
+            print("Une erreur est survenue au moment d'ouvrir l'image.")
+            sys.exit()
+    except AttributeError:
         print("Une erreur est survenue au moment d'ouvrir l'image.")
-        quit()
+        sys.exit()
     
     # preprocessing
     image = preprocess(image, False, avg_filter, closing_amount)

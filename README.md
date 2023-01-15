@@ -10,8 +10,8 @@ Encodage de caractéristiques de documents administratifs.
 
 ## **📖Résumé**
 
-*copier-coller l'abstract*
-
+   Dans le contexte actuel de l'évolution technologique, de plus en plus de documents se retrouvent numérisés. Il est donc devenu encore plus important de pouvoir vérifier l'authenticité de ces documents. Dans cette optique, nous avons travaillé sur une solution d'encodage et d'authentification de documents. Notre approche consiste à encoder chaque caractère scanné, à l'aide d'une méthode alliant squelettisation et encodage de Freeman.
+L'encodage devant être résistant à de multiples impressions et scans, un pré-traitement particulier permet d'améliorer la précision de notre programme. 
 ## **📦Contenu**
 
 - **Dataset** de caractères numériques, imprimés et scannés de une à deux fois.

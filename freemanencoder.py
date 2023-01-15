@@ -85,24 +85,32 @@ def freeman_from_skel(skel):
     return code
 
 
-def freeman(image_path):
+def freeman(image_path, avg_filter, closing_amount, remove_serifs):
     """Encodage de freeman
 
     Args:
         image_path (str): le path (chemin) de l'image sur laquel on applique freeman
+        vg_filter (boolean): applique ou non le filtre moyenneur
+        closing_amount (int): nombre de d'erosion/dilatation à appliquer
+        remove_serif (boolean): applique ou non la fonction qui retire les sérifs
 
     Returns:
         str: encodage de l'image
     """
+    
     image = cv2.imread(image_path)
+    if image.size == 0:
+        print("Une erreur est survenue au moment d'ouvrir l'image.")
+        quit()
     
     # preprocessing
-    image = preprocess(image, False)
+    image = preprocess(image, False, avg_filter, closing_amount)
     
     # skeletonization
     skel = skeletonize(image)
     
-    deleteSerifs(skel, 10)
+    if remove_serifs:
+        deleteSerifs(skel, 10)
     
     # Affichage du squelette
     #affichage(aff,  "Skeleton")             # afficher dans une fenetre à part
@@ -111,11 +119,14 @@ def freeman(image_path):
     # freeman encoding
     return freeman_from_skel(skel)
 
-def freemanLoop(folder):
+def freemanLoop(folder, avg_filter, closing_amount, remove_serifs):
     """Encodage de freeman sur tous les elements d'un dossier
 
     Args:
         folder (str): nom du dossier
+        vg_filter (boolean): applique ou non le filtre moyenneur
+        closing_amount (int): nombre de d'erosion/dilatation à appliquer
+        remove_serif (boolean): applique ou non la fonction qui retire les sérifs
 
     Returns:
         char[]: liste des encodage de chaque image du dossier
@@ -139,7 +150,7 @@ def freemanLoop(folder):
             
             image_path = base_path + "/" +  folder + "/00_resize/" + char + "/" + file_name
             
-            results[char].append(freeman(image_path))
+            results[char].append(freeman(image_path, avg_filter, closing_amount, remove_serifs))
                 
     return results
 

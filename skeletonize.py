@@ -3,12 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import string
 
-def preprocess(image, plot_image):
+def preprocess(image, plot_image, avg_filter, closing_amount):
     """Applique le pre-traitement sur une image
 
     Args:
         image (np.array): image a pre-traiter 
         plot_image (boolean): affiche ou non les etapes du pre-traitement dans les pyplot
+        avg_filter (boolean): applique ou non le filtre moyenneur
+        closing_amount (int): nombre de d'erosion/dilatation à appliquer
 
     Returns:
         np.array: image pre-traitee
@@ -19,9 +21,10 @@ def preprocess(image, plot_image):
     if(plot_image):
         pltShowImage(image, "base")
     
-    # filtre moyenneur et autres preprocessing à mettre ici
-    kernel = np.ones((3,3),np.float32)/9
-    image = cv2.filter2D(image,-1,kernel)
+    # filtre moyenneur
+    if(avg_filter):
+        kernel = np.ones((3,3),np.float32)/9
+        image = cv2.filter2D(image,-1,kernel)
     
     if(plot_image):
         pltShowImage(image, "base -> average")
@@ -36,10 +39,11 @@ def preprocess(image, plot_image):
     image = (255 - image)/255
     
     # closing
-    kernel = np.ones((3,3),np.float32)
-    
-    image = cv2.dilate(image,kernel,iterations = 2)
-    image = cv2.erode(image,kernel,iterations = 2)
+    if(closing_amount > 0):
+        kernel = np.ones((3,3),np.float32)
+        
+        image = cv2.dilate(image,kernel,iterations = closing_amount)
+        image = cv2.erode(image,kernel,iterations = closing_amount)
     
     if(plot_image):
         pltShowImage(image, "base -> average-> thresholding -> closing")

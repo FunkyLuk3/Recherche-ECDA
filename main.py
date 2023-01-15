@@ -6,7 +6,7 @@ def processAllDataset(avg_filter, closing_amount, remove_serifs):
     # folders
     numeric_folder = "01_Numeric_police12"
     scan_folders = ["02_PS300_police12","03_PS600_police12","04_2PS600_police12"]
-    plot_names = ["1 scan 300 dpi", "1 scan 600 dpi", "2 scan 600 dpi"]
+    plot_names = ["PS300", "PS600", "2PS600"]
     
     numeric_codes = freemanLoop(numeric_folder, avg_filter, closing_amount, remove_serifs)
     scan_codes = []
@@ -15,12 +15,13 @@ def processAllDataset(avg_filter, closing_amount, remove_serifs):
     
     distances = []
     for codes in scan_codes:
-        distances.append(freemanEditDistances(numeric_codes, codes))
+        distances.append( freemanEditDistances(numeric_codes, codes))
 
-    fig, axs = plt.subplots(len(distances))
+    fig, axs = plt.subplots(len(distances))    
     
     for i in range(len(distances)):
         axs[i].set(ylabel=plot_names[i])
+        
       
     for i,dist in enumerate(distances):
         plotDistancesStats(dist, axs[i])

@@ -25,18 +25,18 @@ def preprocess(image, plot_image, avg_filter, closing_amount):
     if(avg_filter):
         kernel = np.ones((3,3),np.float32)/9
         image = cv2.filter2D(image,-1,kernel)
-    
+
     if(plot_image):
         pltShowImage(image, "base -> average")
     
     # thresholding
-    ret, image = cv2.threshold(image, 190, 255, cv2.THRESH_BINARY)
+    ret, image = cv2.threshold(image, 180, 255, cv2.THRESH_BINARY)
     
     if(plot_image):
         pltShowImage(image, "base -> average -> thresholding")
     
     # invert colors and have a 2D array of values between 0 and 1
-    image = (255 - image)/255
+    image = (255 - image)
     
     # closing
     if(closing_amount > 0):
@@ -44,6 +44,9 @@ def preprocess(image, plot_image, avg_filter, closing_amount):
         
         image = cv2.dilate(image,kernel,iterations = closing_amount)
         image = cv2.erode(image,kernel,iterations = closing_amount)
+    
+    # on normalise l'image, car la fonction de squelettisation prend en paramètre un tableau avec des valeurs entre 0 et 1
+    image = image/255
     
     if(plot_image):
         pltShowImage(image, "base -> average-> thresholding -> closing")
@@ -79,20 +82,21 @@ def affichage(image, windowname):
 def  plotDistancesStats(distances, ax):
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
-    moyennes = []
+    data = []
     
-    for char in letters:
-        m = 0
-        long_moy = 0;
+    for i, char in enumerate(letters):
+        data.append([])
+
+        long_m = 0
         for d, l in distances[char]:
-            m += d
-            long_moy += l
+            long_m += l
             
-        m = float(m) / len(distances[char])
-        long_moy = float(long_moy) / len(distances[char])
-        moyennes.append(m/long_moy)
+        long_m = float(long_m) / len(distances[char])
+        
+        for j in range(len(distances[char])):
+            data[i].append(distances[char][j][0] / long_m)
     
-    ax.bar(letters, moyennes)
+    ax.boxplot(data, labels=letters)
 
 # copiée-collée https://www.geeksforgeeks.org/edit-distance-dp-5
 def editDistance(str1, str2, m, n):
@@ -136,4 +140,4 @@ def editDistance(str1, str2, m, n):
                                    dp[i-1][j],        # Remove
                                    dp[i-1][j-1])      # Replace
  
-    return dp[m][n]                
+    return dp[m][n]

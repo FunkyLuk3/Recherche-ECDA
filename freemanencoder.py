@@ -164,6 +164,7 @@ def freemanEditDistances(freeman_codes1, freeman_codes2):
 
     Returns:
         int{}: Distance entre freeman_codes1 et freeman_codes2
+        float{}: moyenne et écart-type correspondant aux distances
     """
     letters = list(string.ascii_lowercase)      # toutes les lettres de l'alphabet
     
@@ -171,6 +172,7 @@ def freemanEditDistances(freeman_codes1, freeman_codes2):
     
     for char in letters:
         distances[char] = []
+        
         for i in range(len(freeman_codes1[char])):
             freeman_code_1S = freeman_codes1[char][i]
             freeman_code_2S = freeman_codes2[char][i]

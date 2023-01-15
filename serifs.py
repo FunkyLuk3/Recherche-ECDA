@@ -10,7 +10,7 @@ def voisin2(image, x, y):
     """Detecte les voisins d'un pixel
 
     Args:
-        tabimage (array): tableau contenant les pixels de l'image
+        tabimage (np.array): tableau contenant les pixels de l'image
         x (int): coordonnee du pixel
         y (int): coordonnee du pixel
 
@@ -41,6 +41,18 @@ def voisin2(image, x, y):
 
 #formule dans le document 1608-1613
 def crossingNumber(skeleton, x, y):
+    """Renvoie le crossing number d'un pixel objet (pixel non nul).
+    Le crossing number est défini comme la transition entre les 8 voisins du pixel (x,y)
+    D'une manière générale, un crossing number de 1 indique une extrémité, 3 ou plus indique une jonction et 2 un pixel 'ordinaire'
+
+    Args:
+        skeleton (np.array): squelette dans lequel on va regarder le pixel
+        x (int): coordonnee du pixel
+        y (int): coordonnee du pixel
+
+    Returns:
+        float: le crossing number du pixel
+    """
     height, width = skeleton.shape
     
     CN = 0
@@ -71,6 +83,14 @@ def crossingNumber(skeleton, x, y):
 
 #renvoie les jonctions du squelette
 def possibleSerifs(skeleton):
+    """Renvoie une liste de coordonnées correspondant au débuts de potentiels sérifs dans le squelette.
+
+    Args:
+        skeleton (np.array): le squelette
+
+    Returns:
+        array: liste des pixels au début de potentiels sérifs
+    """
     height, width = skeleton.shape
     
     # les potentiels sérifs sont caractérisés par leur point de départ : l'extrémité
@@ -87,6 +107,16 @@ def possibleSerifs(skeleton):
     return p_serifs
 
 def removeSerif(skeleton, start, size_max):
+    """Fonction qui va retirer le sérif du squelette s'il répond au paramètre size_max. Ne renvoie rien
+
+    Args:
+        skeleton (np.array): le squelette
+        start ((int, int)): les coordonnées du point de départ du sérif
+        size_max (int): la taille limite (si l'extrémité est plus longue, elle n'est pas supprimée)
+        
+    Returns:
+        bool: booléen indiquant si l'extrémité a été retirée ou non
+    """
     x,y = start
     
     # première boucle qui sert à savoir si c'est bien un sérif (extrémité de taille <= size_max)
@@ -120,10 +150,25 @@ def removeSerif(skeleton, start, size_max):
     if len(serif_pixels) <= size_max:
         for (x,y) in serif_pixels:
             skeleton[x,y] = 0
+        return True
+    
+    return False
 
 
 def deleteSerifs(skeleton, size_max):
+    """Fonction qui va lister les potentiels sérifs du squelette puis appeler removeSerif sur chacun d'entre eux.
+
+    Args:
+        skeleton (np.array): le squelette
+        size_max (int): la taille limite (si l'extrémité est plus longue, elle n'est pas supprimée)
+        
+    Returns:
+        int: le nombre de sérif retirés
+    """
     p_serifs = possibleSerifs(skeleton)
-    
+    count = 0
     for s in p_serifs:
-        removeSerif(skeleton, s, size_max)
+        if removeSerif(skeleton, s, size_max):
+            count += 1
+    
+    return count
